@@ -9,7 +9,7 @@ $ npm install
 ```
 We install both packages
 
-Run localserver for backend ro work
+Download localserver such as laragon https://laragon.org/
 
 Get your backend url and paste it into the config.js file
 

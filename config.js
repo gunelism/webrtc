@@ -1,3 +1,3 @@
 export function config_host() {
-  return "http://localhost";
+  return "http://localhost/webrtc/webrtc";
 }
