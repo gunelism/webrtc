@@ -16,7 +16,7 @@ Run back-end localserver as well as front-end (npm run dev)
 
 Open the view in (probably) http://localhost:8080/?type=video
 
-![video](images/video_webrtc.PNG)
+![video](https://github.com/gunelism/images/blob/master/video_webrtc.PNG)
 
 P.S. open front-end here:
 win+r paste this 
