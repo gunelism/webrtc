@@ -11,6 +11,8 @@ We install both packages
 
 Run localserver for backend ro work
 
+Get your backend url and paste it into the config.js file
+
 Run "npm run dev" for frontend local server to work
 
 P.S. open front-end here:

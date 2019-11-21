@@ -5,7 +5,7 @@ import videojs from 'video.js';
 import 'webrtc-adapter';
 import RecordRTC from 'recordrtc';
 import $ from 'jquery';
-
+import { config_host } from './config';
 
 // the following imports are only needed when you're recording
 // audio-only using the videojs-wavesurfer plugin
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         $.ajax({
             type: "POST",
-            url: 'http://localhost/webrtc/webrtc/upload-video.php',
+            url: config_host()+'/webrtc/webrtc/upload-video.php',
             data: formData,
             processData: false,
             contentType: false,

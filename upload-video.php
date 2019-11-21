@@ -35,6 +35,9 @@ if(isset($_FILES["video"]) && $_SERVER['REQUEST_METHOD'] === 'POST' ){
     $fileNameW = $fileName.".webm";
     $fileNameM = $fileName.($type=="video" ? ".mp4" : ".mp3");
 
+    if (!file_exists('./uploads')) mkdir('./uploads', 0777, true);
+    if (!file_exists('./output')) mkdir('./output', 0777, true);
+
     $uploadDirectory = './uploads/'. $fileNameW;
     
     if (!move_uploaded_file($_FILES["video"]["tmp_name"], $uploadDirectory)) {
