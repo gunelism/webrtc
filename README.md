@@ -19,3 +19,4 @@ P.S. open front-end here:
 win+r paste this 
 	- chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security 
 
+ 
