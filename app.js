@@ -5,8 +5,7 @@ import videojs from 'video.js';
 import 'webrtc-adapter';
 import RecordRTC from 'recordrtc';
 import $ from 'jquery';
-import { config_host } from './config';
-
+import {config_host} from './config';
 // the following imports are only needed when you're recording
 // audio-only using the videojs-wavesurfer plugin
 import WaveSurfer from 'wavesurfer.js';
@@ -104,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
     player.on('deviceError', function() {
         console.error(player.deviceErrorCode);
     });
-    console.log(player)
     $("#save").click(function(e){
         e.preventDefault();
 
@@ -114,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         $.ajax({
             type: "POST",
-            url: config_host()+'/upload-video.php',
+            url: config_host+'/upload-video.php',
             data: formData,
             processData: false,
             contentType: false,
@@ -123,6 +121,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert("Uploaded to server.")
             }
         })
+        // try {
+        //   const data = postData(config_host+'/upload-video.php', formData);
+        //   console.log(JSON.stringify(data)); // JSON-string from `response.json()` call
+        // } catch (error) {
+        //   console.error(error);
+        // }
+
+        // async function postData(url, data) {
+        //   const response = await fetch(url, {
+        //     method: 'POST', 
+        //     mode: 'cors', 
+        //     cache: 'no-cache', 
+        //     credentials: 'same-origin', 
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     redirect: 'follow', 
+        //     referrer: 'no-referrer', 
+        //     body: JSON.stringify(data) 
+        //   });
+        //   return await response.json(); 
+        // }
     });
 });
 

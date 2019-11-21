@@ -2,6 +2,11 @@
 
 require './vendor/autoload.php';
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
+header('Content-Type: application/json');
+
 function upload_object($bucketName, $objectName, $source)
 {
     $cloud = new Google\Cloud\Core\ServiceBuilder([
@@ -41,7 +46,9 @@ if(isset($_FILES["video"]) && $_SERVER['REQUEST_METHOD'] === 'POST' ){
     $uploadDirectory = './uploads/'. $fileNameW;
     
     if (!move_uploaded_file($_FILES["video"]["tmp_name"], $uploadDirectory)) {
-        echo("Couldn't upload video !");
+        // echo("Couldn't upload video !");
+        $ret = ['result' => "Couldn't upload File !"];
+        echo json_encode($ret);
     }else{
       if($type=="audio")
         convertAudio($uploadDirectory, $fileName);
@@ -50,10 +57,14 @@ if(isset($_FILES["video"]) && $_SERVER['REQUEST_METHOD'] === 'POST' ){
 
         //upload to cloud
       upload_object("singularity_task", $fileNameM, "./output/".$fileNameM);
+
+      $ret = ['result' => 'Uploaded'];
+      echo json_encode($ret);
     } 
 }
 else{
-    echo "No file uploaded"; 
+    $ret = ['result' => 'Uploaded'];
+    echo json_encode($ret);
 }
 
 

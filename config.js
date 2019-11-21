@@ -1,3 +1,1 @@
-export function config_host() {
-  return "http://localhost/webrtc/webrtc";
-}
+export const config_host = "http://localhost/webrtc/webrtc";

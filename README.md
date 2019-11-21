@@ -2,7 +2,7 @@
 Both composer and npm is required
 
 ```bash
-$ composer require php-ffmpeg/php-ffmpeg
+$ composer install
 ```
 ```bash
 $ npm install
@@ -11,9 +11,10 @@ We install both packages
 
 Download localserver such as laragon https://laragon.org/
 
-Get your backend url and paste it into the config.js file
+Get your back-end url and paste it into the config.js file
+Run back-end localserver as well as front-end (npm run dev)
 
-Run "npm run dev" for frontend local server to work
+Open the view in (probably) http://localhost:8080/?type=video
 
 P.S. open front-end here:
 win+r paste this 
