@@ -18,6 +18,8 @@ Open the view in (probably) http://localhost:8080/?type=video
 
 ![video](https://github.com/gunelism/images/blob/master/video_webrtc.PNG)
 
+After recording and uploading /uploads and /output folders will be created, where you can see your files locally
+
 P.S. open front-end here:
 win+r paste this 
 	- chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security 
