@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         $.ajax({
             type: "POST",
-            url: 'http://webrtc.test/webrtc/upload-video.php',
+            url: 'http://localhost/webrtc/webrtc/upload-video.php',
             data: formData,
             processData: false,
             contentType: false,
